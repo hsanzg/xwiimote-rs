@@ -26,8 +26,8 @@ fn main() {
     } else {
         // Run pkg-config since we're linking dynamically.
         pkg_config::Config::new()
-            .atleast_version("2.2")
-            .probe("xwiimote")
+            .atleast_version("2")
+            .probe("libxwiimote")
             .expect("could not locate the xwiimote library");
     }
 

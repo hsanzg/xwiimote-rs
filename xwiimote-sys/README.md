@@ -5,8 +5,14 @@
 
 Rust FFI bindings to the [xwiimote](https://github.com/dvdhrm/xwiimote) user-space library.
 
-The [`xwiimote`](https://crates.io/crates/xwiimote) crate provides higher-level,
+The [xwiimote](https://crates.io/crates/xwiimote) crate provides higher-level,
 more idiomatic bindings to the same library.
+
+## Usage
+
+You will need the following dependencies to create the bindings:
+- libudev
+- libxwiimote (optional; set `XWIIMOTE_SYS_STATIC=1` to build from source and link statically.)
 
 ## License
 
