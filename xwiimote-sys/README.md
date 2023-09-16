@@ -11,8 +11,8 @@ more idiomatic bindings to the same library.
 ## Usage
 
 You will need the following dependencies to create the bindings:
-- libudev
-- libxwiimote (optional; set `XWIIMOTE_SYS_STATIC=1` to build from source and link statically.)
+- libudev >= 183
+- libxwiimote >= 2-2 (optional; set `XWIIMOTE_SYS_STATIC=1` to build from source and link statically.)
 
 ## License
 

@@ -9,8 +9,8 @@ Idiomatic Rust bindings to the [xwiimote](https://github.com/dvdhrm/xwiimote) us
 ## Usage
 
 You will need the following dependencies to build and use the library:
-- libudev
-- libxwiimote (optional; set `XWIIMOTE_SYS_STATIC=1` to build from source and link statically.)
+- libudev >= 183
+- libxwiimote >= 2-2 (optional; set `XWIIMOTE_SYS_STATIC=1` to build from source and link statically.)
 
 ## License
 
