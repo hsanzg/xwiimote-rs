@@ -1,0 +1,3 @@
+[submodule "xwiimote-sys/vendor"]
+	path = xwiimote-sys/vendor
+	url = https://github.com/xwiimote/xwiimote.git
