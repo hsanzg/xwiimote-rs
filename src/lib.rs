@@ -288,13 +288,13 @@ pub struct MotionPlusNormalization {
 #[repr(u32)]
 #[derive(Copy, Clone, Debug, FromPrimitive)]
 pub enum Led {
-    /// The left-most light.
+    /// The leftmost light.
     One = xwiimote_sys::XWII_LED1,
     /// The mid-left light.
     Two = xwiimote_sys::XWII_LED2,
     /// The mid-right light.
     Three = xwiimote_sys::XWII_LED3,
-    /// The right-most light.
+    /// The rightmost light.
     Four = xwiimote_sys::XWII_LED4,
 }
 
