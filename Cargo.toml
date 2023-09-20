@@ -10,4 +10,16 @@ keywords = ["xwiimote", "bindings"]
 edition = "2021"
 
 [dependencies]
+bitflags = "2.4"
+futures-core = "0.3"
+libc = "0.2"
+once_cell = "1.18"
+num-traits = "0.2"
+num-derive = "0.4"
+signal-hook = { version = "0.3", features = [] }
 xwiimote-sys = { path = "xwiimote-sys", version = "0.1" }
+
+[dev-dependencies]
+futures-executor = "0.3"
+futures-util = "0.3"
+tokio-test = "0.4"
