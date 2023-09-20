@@ -1,6 +1,6 @@
 [package]
 name = "xwiimote"
-version = "0.2.3"
+version = "0.2.4"
 authors = ["Hugo Sanz González <hugo@hgsg.me>"]
 license = "MIT"
 repository = "https://github.com/hsanzg/xwiimote"
