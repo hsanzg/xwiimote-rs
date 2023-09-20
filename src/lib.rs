@@ -20,7 +20,8 @@
 //!     Ok(None) => println!("found no connected device"),
 //!     Err(e) => eprintln!("could not enumerate devices: {e}"),
 //! };
-//! # });
+//! # Ok::<(), std::io::Error>(())
+//! # }).unwrap();
 //! ```
 //!
 //! Print device addresses as new Wii Remotes are discovered.
@@ -28,12 +29,13 @@
 //! use xwiimote::{Device, Monitor};
 //! use futures_util::TryStreamExt;
 //!
-//! # tokio_test::block_on(async {
+//! # let _ = async { // the `while` loop runs indefinitely.
 //! let mut monitor = Monitor::discover()?;
 //! while let Ok(Some(address)) = monitor.try_next().await {
-//!     println!("found device at {address}");
+//!     println!("found device at {address:?}");
 //! }
-//! # });
+//! # Ok::<(), std::io::Error>(())
+//! # };
 //!
 //! ```
 //!
