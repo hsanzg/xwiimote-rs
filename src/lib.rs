@@ -301,7 +301,7 @@ pub enum Led {
 /// A connected Wii Remote.
 pub struct Device {
     handle: *mut xwii_iface,
-    /// Is the core channel open in writable mode?
+    /// Is the [core channel](`Channels::CORE`) open in writable mode?
     ///
     /// Operations like toggling the rumble motor require this channel
     /// to be open in order to function.
@@ -388,7 +388,7 @@ impl Device {
     /// that are already open.
     ///
     /// A channel can become available as a result of an extension being plugged
-    /// to the device. Dually, it becomes unavailable when the extension
+    /// to the device. Conversely, it becomes unavailable when the extension
     /// is disconnected.
     pub fn available(&self) -> Channels {
         Channels::from_bits(unsafe { xwii_iface_available(self.handle) }).unwrap()
@@ -405,7 +405,7 @@ impl Device {
         EventStream::new(self)
     }
 
-    // Out-of-band actions (which don't require any channel open to work).
+    // Out-of-band actions (which don't require any open channel to work).
 
     /// Reads the current state of an LED light.
     pub fn led(&self, light: Led) -> Result<bool> {
