@@ -1,6 +1,6 @@
 # wiinote
 
-[![Build status](https://github.com/hsanzg/xwiimote/actions/workflows/build.yml/badge.svg)](https://github.com/hsanzg/xwiimote/actions/)
+[![Build status](https://github.com/hsanzg/xwiimote-rs/actions/workflows/build.yml/badge.svg)](https://github.com/hsanzg/xwiimote-rs/actions/)
 
 Use a [Wii Remote](https://en.wikipedia.org/wiki/Wii_Remote) as a slide clicker.
 
@@ -30,8 +30,8 @@ modprobe hid-wiimote
 ```
 
 Pair and connect to a Wii Remote as with any other Bluetooth device;
-see the [ArchWiki](https://wiki.archlinux.org/title/XWiimote#Connect_the_Wii_Remote)
-article for details.
+see the [ArchWiki article](https://wiki.archlinux.org/title/XWiimote#Connect_the_Wii_Remote)
+for details.
 
 Allow the current user to access the `/dev/uinput` device file:
 ```bash
