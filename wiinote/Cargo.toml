@@ -9,7 +9,6 @@ keywords = ["wiimote", "keynote"]
 edition = "2021"
 
 [dependencies]
-anyhow = "1.0"
 clap = { version = "4.4", features = ["derive"] }
 futures-util = "0.3"
 num-traits = "0.2"
