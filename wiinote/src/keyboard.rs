@@ -12,11 +12,11 @@ type UInputResult<T> = std::result::Result<T, Box<dyn Error>>;
 /// originating from this application.
 static DEV_NAME: &str = "Wiinote";
 
-/// A keyboard virtual device.
+/// A virtual keyboard device.
 pub struct Keyboard(uinput_tokio::Device);
 
 impl Keyboard {
-    /// Creates a new keyboard virtual device.
+    /// Creates a new virtual keyboard device.
     pub async fn new() -> UInputResult<Self> {
         // Register certain keys for sending press and release events.
         let events = [
