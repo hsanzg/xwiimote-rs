@@ -1,18 +1,23 @@
-# xwiimote-sys
+# wiinote
 
-[![Crates.io](https://img.shields.io/crates/v/xwiimote-sys)](https://crates.io/crates/xwiimote-sys)
-[![docs.rs](https://img.shields.io/docsrs/xwiimote-sys)](https://docs.rs/xwiimote-sys)
+[![Build status](https://github.com/hsanzg/xwiimote/actions/workflows/build.yml/badge.svg)](https://github.com/hsanzg/xwiimote/actions/)
 
-Rust FFI bindings to the [xwiimote](https://github.com/dvdhrm/xwiimote) user-space library.
+Use a [Wii Remote](https://en.wikipedia.org/wiki/Wii_Remote) as a slide clicker.
 
-The [xwiimote](https://crates.io/crates/xwiimote) crate provides higher-level,
-more idiomatic bindings to the same library.
+This application also serves as an example for using the [Rust bindings](https://crates.io/crates/xwiimote)
+to the [xwiimote](https://github.com/dvdhrm/xwiimote) user-space library.
 
 ## Usage
 
-You will need the following dependencies to create the bindings:
+You will need the following dependencies to build and use wiinote:
+- Rust >= 1.61
 - libudev >= 183
 - libxwiimote >= 2-2 (optional; set `XWIIMOTE_SYS_STATIC=1` to build from source and link statically.)
+- libdbus-1-dev >= 1.12.20
+
+## Setup
+
+todo.
 
 ## License
 

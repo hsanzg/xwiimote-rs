@@ -1,0 +1,18 @@
+[package]
+name = "wiinote"
+version = "0.1.0"
+authors = ["Hugo Sanz González <hugo@hgsg.me>"]
+license = "MIT"
+repository = "https://github.com/hsanzg/xwiimote"
+description = "Use a Wii Remote as a slide clicker"
+keywords = ["wiimote", "keynote"]
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+futures-util = "0.3"
+num-traits = "0.2"
+tokio = { version = "1.32", features = ["macros", "rt", "time"]}
+uinput-tokio = { git = "https://github.com/hsanzg/uinput-tokio.git", branch = "errors" }
+xwiimote = { path = "..", version = "0.2"}
