@@ -1,6 +1,5 @@
-on: [push, pull_request]
-
 name: Continuous integration
+on: [push, pull_request]
 
 jobs:
   test:
@@ -14,11 +13,14 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libudev-dev
-      - uses: actions-rs/toolchain@v1
+      - name: Install latest stable Rust
+        uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: stable
           override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: test
+      - name: Run xwiimote tests
+        run: cargo test
+      - name: Run wiinote tests
+        working-directory: wiinote
+        run: cargo test
