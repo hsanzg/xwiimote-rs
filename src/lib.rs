@@ -1,5 +1,5 @@
 //! This library provides a safe Rust interface to the [`xwiimote`][xwiimote]
-//! userspace library.
+//! user-space library.
 //!
 //! # Examples
 //! Connect to the first Wii Remote found and print its battery level.
@@ -96,7 +96,7 @@ fn to_rust_str(str: &CStr) -> String {
 }
 
 /// The main result type used by this crate.
-pub(crate) type Result<T> = std::io::Result<T>;
+pub type Result<T> = std::io::Result<T>;
 
 /// A Wii Remote device address.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -416,7 +416,7 @@ impl Device {
     }
 
     /// Changes the state of an LED light.
-    pub fn set_led(&mut self, light: Led, enabled: bool) -> Result<()> {
+    pub fn set_led(&self, light: Led, enabled: bool) -> Result<()> {
         let res_code = unsafe { xwii_iface_set_led(self.handle, light as c_uint, enabled) };
         bail_if!(res_code != 0);
         Ok(())
