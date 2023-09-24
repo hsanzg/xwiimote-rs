@@ -37,7 +37,7 @@ Allow the current user to access the `/dev/uinput` device file:
 ```bash
 groupadd -f uinput
 gpasswd -a $USER uinput
-cat >/lib/udev/rules.d/40-input.rules <<EOL
+cat >/etc/udev/rules.d/40-input.rules <<EOL
 KERNEL=="uinput", SUBSYSTEM=="misc", GROUP="uinput", MODE="0660"
 EOL
 ```
