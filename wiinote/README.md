@@ -17,7 +17,41 @@ You will need the following dependencies to build and use wiinote:
 
 ## Setup
 
-todo.
+Enable the `uinput` kernel module to create a virtual keyboard device,
+and emit key events corresponding to button presses on a Wii Remote:
+```bash
+modprobe uinput
+```
+
+Enable the Wii Remote kernel driver, which is used to communicate
+with a Wii Remote and its extensions (such as a Nunchuck):
+```bash
+modprobe hid-wiimote
+```
+
+Pair and connect to a Wii Remote as with any other Bluetooth device;
+see the [ArchWiki](https://wiki.archlinux.org/title/XWiimote#Connect_the_Wii_Remote)
+article for details.
+
+Allow the current user to access the `/dev/uinput` device file:
+```bash
+groupadd -f uinput
+gpasswd -a $USER uinput
+cat >/lib/udev/rules.d/40-input.rules <<EOL
+KERNEL=="uinput", SUBSYSTEM=="misc", GROUP="uinput", MODE="0660"
+EOL
+```
+
+Reload the `udev` rules:
+```bash
+udevadm control --reload-rules && udevadm trigger
+```
+
+Finally, run the application with `./wiinote`.
+By default the program exits if no connected Wii Remote is found,
+but this behavior can be changed via the `--discover` flag.
+The output of `./wiinote --help` contains further information
+on automatic device discovery.
 
 ## License
 
