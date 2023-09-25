@@ -17,7 +17,7 @@ You will need the following dependencies to build and use wiinote:
 
 ## Setup
 
-Enable the `uinput` kernel module to create a virtual keyboard device,
+Enable the `uinput` kernel module, which lets us create a virtual keyboard device
 and emit key events corresponding to button presses on a Wii Remote:
 ```bash
 modprobe uinput
